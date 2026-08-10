@@ -1,0 +1,22 @@
+# Dependencias (se reinstalan con npm install, no hace falta subirlas)
+node_modules/
+
+# Variables de entorno con secretos reales (contraseñas, URLs de conexión)
+.env
+.env.local
+*.env.local
+
+# Builds
+backend/dist/
+frontend/.next/
+
+# Instaladores y binarios grandes que no son parte del código
+*.msi
+*.exe
+
+# Archivos de sistema de Windows/Mac
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log

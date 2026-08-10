@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Dos manchas de luz muy tenues (latón arriba-izquierda, verde-mar
+       arriba-derecha) para que el fondo no sea un navy plano — sutil
+       a propósito, esto es un panel de instrumentos, no un hero de marketing. */
+    background-image:
+      radial-gradient(circle at 15% -10%, rgba(232, 163, 61, 0.06), transparent 40%),
+      radial-gradient(circle at 85% 5%, rgba(79, 155, 140, 0.05), transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse-slow 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* react-leaflet no trae estilos de popup que combinen con el tema oscuro */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #16324a;
+  color: #eaf2f5;
+}

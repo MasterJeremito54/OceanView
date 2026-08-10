@@ -1,0 +1,32 @@
+[
+  {
+    "id": "42057",
+    "name": "Caribbean Sea (SW de Puerto Rico)",
+    "lat": 16.909,
+    "lon": -67.502
+  },
+  {
+    "id": "44013",
+    "name": "Boston - 16 NM al este de Boston, MA",
+    "lat": 42.346,
+    "lon": -70.651
+  },
+  {
+    "id": "46042",
+    "name": "Monterey - 27 NM WNW de Monterey, CA",
+    "lat": 36.787,
+    "lon": -122.408
+  },
+  {
+    "id": "51001",
+    "name": "Northwestern Hawaii One - 188 NM NW de Kauai, HI",
+    "lat": 24.475,
+    "lon": -162.030
+  },
+  {
+    "id": "44025",
+    "name": "Long Island - 30 NM al sur de Islip, NY",
+    "lat": 40.258,
+    "lon": -73.175
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "44013",
+    "name": "Boston - 16 NM al este de Boston, MA",
+    "lat": 42.346,
+    "lon": -70.651,
+    "priority": "primary"
+  },
+  {
+    "id": "46042",
+    "name": "Monterey - 27 NM WNW de Monterey, CA",
+    "lat": 36.787,
+    "lon": -122.408,
+    "priority": "primary"
+  },
+  {
+    "id": "51001",
+    "name": "Northwestern Hawaii One - 188 NM NW de Kauai, HI",
+    "lat": 24.475,
+    "lon": -162.030,
+    "priority": "primary"
+  },
+  {
+    "id": "42057",
+    "name": "Caribbean Sea (SW de Puerto Rico)",
+    "lat": 16.909,
+    "lon": -67.502,
+    "priority": "secondary",
+    "note": "Sensor de temperatura del agua (WTMP) reportando MM al momento de la validacion (Fase 0.5)"
+  },
+  {
+    "id": "44025",
+    "name": "Long Island - 30 NM al sur de Islip, NY",
+    "lat": 40.258,
+    "lon": -73.175,
+    "priority": "secondary",
+    "note": "Sensor de viento (WDIR/WSPD/GST) reportando MM desde hace semanas al momento de la validacion (Fase 0.5)"
+  }
+]

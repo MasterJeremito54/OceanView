@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Boya monitoreada. Se siembra desde src/config/stations.json (prisma/seed.ts).
+model Station {
+  id                  String    @id // ID de NDBC, ej. "44013"
+  name                String
+  latitude            Float
+  longitude           Float
+  active              Boolean   @default(true)
+  lastSeenAt          DateTime? // última vez que la ingesta tuvo éxito con esta boya
+  consecutiveFailures Int       @default(0) // se resetea a 0 en cada éxito
+  createdAt           DateTime  @default(now())
+  readings            Reading[]
+
+  @@map("stations")
+}
+
+// Una lectura individual de una boya, en UTC (NDBC reporta todo en UTC).
+// Todos los campos meteorológicos son nullable porque NDBC usa "MM" para
+// dato faltante con frecuencia — ver src/ingestion/parser.ts.
+model Reading {
+  id                  String   @id @default(cuid())
+  stationId           String
+  station             Station  @relation(fields: [stationId], references: [id])
+  timestamp           DateTime // UTC
+
+  windDirDeg          Float?
+  windSpeedMs         Float?
+  gustMs              Float?
+  waveHeightM         Float?
+  dominantWavePeriodS Float?
+  avgWavePeriodS      Float?
+  waveDirDeg          Float?
+  pressureHpa         Float?
+  airTempC            Float?
+  waterTempC          Float?
+  dewPointC           Float?
+  visibilityNmi       Float?
+  pressureTendencyHpa Float?
+  tideFt              Float?
+
+  qualityFlag         String   @default("valid") // "valid" | "suspect"
+  createdAt           DateTime @default(now())
+
+  // Evita duplicados si la ingesta se corre más de una vez sobre la misma
+  // ventana de tiempo (upsert por esta clave compuesta).
+  @@unique([stationId, timestamp])
+  @@index([stationId, timestamp])
+  @@map("readings")
+}

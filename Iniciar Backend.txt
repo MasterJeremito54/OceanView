@@ -1,0 +1,7 @@
+Iniciar Backend
+cd "C:\Users\Jesse Paez Herrera\Desktop\Proyecto - OceanView\backend"
+npm run dev
+
+Iniciar Frontend
+cd "C:\Users\Jesse Paez Herrera\Desktop\Proyecto - OceanView\frontend"
+npm run dev

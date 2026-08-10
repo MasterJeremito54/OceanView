@@ -1,0 +1,14 @@
+{
+  "name": "noaa-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fase 0.5 de OceanView: validar la obtencion de datos reales de NOAA NDBC",
+  "scripts": {
+    "fetch": "ts-node fetch-buoy.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  }
+}
