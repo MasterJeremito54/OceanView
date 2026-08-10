@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "ts-node src/server.ts",
     "ingest": "ts-node src/ingestion/ingest.ts",
     "start:scheduler": "ts-node src/scheduler/run.ts",
